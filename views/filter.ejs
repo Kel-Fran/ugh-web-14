@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        wiki stats
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form method="GET">
+        <input name="minViews" type="number" min="0" defalutValue="0" value=<%= value %> id="i-min-views"/>
+        <label for="i-min-views">min views</label>
+        <input type="submit" />
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>views</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const entry of data) { %>
+                <tr>
+                    <td><%= entry.title %></td>
+                    <td><%= entry.views %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <a href="/">home</a>
+    <a href="/new">new</a>
+</body>
+</html>
