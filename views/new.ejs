@@ -1,0 +1,29 @@
+<% const {success, titleValue = "", urlValue = "", viewsValue = 0, message} = locals %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        wiki stats
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="title" id="i-title" value=<%= titleValue %>>
+        <label for="i-title">title</label>
+        <input type="text" name="url" id="i-url" value=<%= urlValue %>>
+        <label for="i-url">url</label>
+        <input type="number" name="views" id="i-views" value=<%= viewsValue %>>
+        <label for="i-views">views</label>
+        <input type="submit">
+    </form>
+    <% if (message) { %>
+        <p style="color:<%= success ? 'green' : 'red' %>"><%- message %></p>
+    <% } %>
+    <a href="/">home</a>
+    <a href="/filter">filter</a>
+</body>
+</html>
