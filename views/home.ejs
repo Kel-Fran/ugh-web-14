@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        wiki stats
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>views</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const entry of data) { %>
+                <tr>
+                    <td style=<%= entry.views > 1000 ? "font-weight:bold;" : ""%>><%= entry.title %></td>
+                    <td><%= entry.views %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <a href="/filter">filter</a>
+    <a href="/new">new</a>
+</body>
+</html>
